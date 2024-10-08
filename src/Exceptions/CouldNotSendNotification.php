@@ -1,6 +1,6 @@
 <?php
 
-namespace NotificationChannels\Line\Exceptions;
+namespace LeoChien\LaravelNotificationChannelLine\Exceptions;
 
 use GuzzleHttp\Exception\ClientException;
 

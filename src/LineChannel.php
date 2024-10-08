@@ -1,16 +1,16 @@
 <?php
 
-namespace NotificationChannels\Line;
+namespace LeoChien\LaravelNotificationChannelLine;
 
 use Exception;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Notifications\Notification;
-use NotificationChannels\Line\Exceptions\CouldNotSendNotification;
+use LeoChien\LaravelNotificationChannelLine\Exceptions\CouldNotSendNotification;
 
 class LineChannel
 {
-    /** @var \NotificationChannels\Line\Line The HTTP client instance. */
+    /** @var \LeoChien\LaravelNotificationChannelLine\Line The HTTP client instance. */
     private $line;
 
     public function __construct(Line $line)
@@ -24,11 +24,11 @@ class LineChannel
      * @param  mixed  $notifiable
      * @param  \Illuminate\Notifications\Notification  $notification
      *
-     * @throws \NotificationChannels\Line\Exceptions\CouldNotSendNotification
+     * @throws \LeoChien\LaravelNotificationChannelLine\Exceptions\CouldNotSendNotification
      */
     public function send($notifiable, Notification $notification)
     {
-        /** @var \NotificationChannels\Line\LineMessage $message */
+        /** @var \LeoChien\LaravelNotificationChannelLine\LineMessage $message */
         $message = $notification->toLine($notifiable);
 
         $to = $message->getTo() ?: $notifiable->routeNotificationFor('line');
@@ -53,7 +53,7 @@ class LineChannel
 
     /**
      * @param  string  $to
-     * @param  \NotificationChannels\LINE\LINEMessage  $message
+     * @param  \LeoChien\LaravelNotificationChannelLine\LINEMessage  $message
      * @return void
      */
     private function sendMessage(string $to, LineMessage $message): void

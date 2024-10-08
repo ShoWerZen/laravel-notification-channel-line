@@ -1,6 +1,6 @@
 <?php
 
-namespace NotificationChannels\Line;
+namespace LeoChien\LaravelNotificationChannelLine;
 
 use GuzzleHttp\Client as HttpClient;
 use Illuminate\Notifications\ChannelManager;

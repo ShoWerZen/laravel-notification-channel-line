@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace NotificationChannels\Line;
+namespace LeoChien\LaravelNotificationChannelLine;
 
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\ClientException;
-use NotificationChannels\Line\Exceptions\CouldNotSendNotification;
+use LeoChien\LaravelNotificationChannelLine\Exceptions\CouldNotSendNotification;
 
 final class Line
 {

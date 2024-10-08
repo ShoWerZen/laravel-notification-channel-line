@@ -55,8 +55,8 @@ You can use the channel in your `via()` method inside the notification:
 
 ```php
 use Illuminate\Notifications\Notification;
-use NotificationChannels\Line\LineMessage;
-use NotificationChannels\Line\LineWebhookChannel;
+use LeoChien\LaravelNotificationChannelLine\LineMessage;
+use LeoChien\LaravelNotificationChannelLine\LineWebhookChannel;
 
 class TaskCompleted extends Notification
 {

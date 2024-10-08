@@ -1,6 +1,6 @@
 <?php
 
-namespace NotificationChannels\Line;
+namespace LeoChien\LaravelNotificationChannelLine;
 
 class LineMessage
 {

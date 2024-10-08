@@ -1,6 +1,6 @@
 <?php
 
-namespace NotificationChannels\Line\Test;
+namespace LeoChien\LaravelNotificationChannelLine\Test;
 
 use PHPUnit\Framework\TestCase;
 

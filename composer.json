@@ -1,7 +1,6 @@
 {
-    "name": "laravel-notification-channels/line",
+    "name": "leochien/laravel-notification-channel-line",
     "description": "LINE Notifications Channel for Laravel",
-    "homepage": "https://github.com/laravel-notification-channels/line",
     "license": "MIT",
     "authors": [
         {
@@ -24,7 +23,7 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "NotificationChannels\\Line\\": "src"
+            "LeoChien\\LaravelNotificationChannelLine\\": "src"
         }
     },
     "autoload-dev": {
@@ -42,7 +41,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "NotificationChannels\\Line\\LineServiceProvider"
+                "LeoChien\\LaravelNotificationChannelLine\\LineServiceProvider"
             ]
         }
     }
