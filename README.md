@@ -1,12 +1,8 @@
 # LINE Laravel Notifications Channel
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/line.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/line)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/line.svg?style=flat-square)](https://packagist.org/packages/leochien/laravel-notification-channel-line)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/laravel-notification-channels/line/master.svg?style=flat-square)](https://travis-ci.org/laravel-notification-channels/line)
-[![StyleCI](https://styleci.io/repos/241828511/shield)](https://styleci.io/repos/241828511)
-[![Quality Score](https://img.shields.io/scrutinizer/g/laravel-notification-channels/line.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/line)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/laravel-notification-channels/line/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/line/?branch=master)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/line.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/line)
+[![Total Downloads](https://img.shields.io/packagist/dt/leochien/laravel-notification-channel-line.svg?style=flat-square)](https://packagist.org/packages/leochien/laravel-notification-channel-line)
 
 ## Introduction
 
@@ -31,7 +27,7 @@ This package makes it easy to send notifications using [LINE](https://line.me/) 
 You can install the package via composer:
 
 ```shell script
-$ composer require laravel-notification-channels/line
+$ composer require leochien/laravel-notification-channel-line
 ```
 
 ### Setting up the LINE service
