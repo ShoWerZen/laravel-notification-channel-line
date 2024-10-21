@@ -1,6 +1,6 @@
 # LINE Laravel Notifications Channel
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/line.svg?style=flat-square)](https://packagist.org/packages/leochien/laravel-notification-channel-line)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/leochien/laravel-notification-channel-line.svg?style=flat-square)](https://packagist.org/packages/leochien/laravel-notification-channel-line)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/leochien/laravel-notification-channel-line.svg?style=flat-square)](https://packagist.org/packages/leochien/laravel-notification-channel-line)
 
