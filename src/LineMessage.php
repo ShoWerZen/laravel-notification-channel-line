@@ -61,6 +61,13 @@ class LineMessage
     }
 
     /**
+     * Get the content of the Line message.
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+    /**
      * Set the content of the Line message.
      * Supports GitHub flavoured markdown.
      *

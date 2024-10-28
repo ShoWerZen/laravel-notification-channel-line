@@ -18,6 +18,11 @@ class LineChannel
         $this->line = $line;
     }
 
+    public function setToken(string $token): void
+    {
+        $this->line->setToken($token);
+    }
+
     /**
      * Send the given notification.
      *

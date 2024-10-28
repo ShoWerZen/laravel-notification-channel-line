@@ -16,7 +16,10 @@ This package makes it easy to send notifications using [LINE](https://line.me/) 
   - [Installation](#installation)
     - [Setting up the LINE service](#setting-up-the-line-service)
   - [Usage](#usage)
-    - [Available methods](#available-methods)
+    - [Text Message](#text-message)
+      - [Available methods](#available-methods)
+    - [Template Messages](#template-messages)
+      - [Available methods](#available-methods-1)
   - [Security](#security)
   - [Contributing](#contributing)
   - [Credits](#credits)
@@ -47,6 +50,9 @@ Add your LINE Message API Token to your `config/services.php`:
 
 ## Usage
 
+### Text Message
+
+Reference: [Text Message](https://developers.line.biz/en/reference/messaging-api/#text-message)
 You can use the channel in your `via()` method inside the notification:
 
 ```php
@@ -65,20 +71,86 @@ class TaskCompleted extends Notification
 
     public function toLine($notifiable): LineMessage
     {
-        return LineMessage::create('Test message')
+        return LineMessage::create()
             ->to('line_user_id')
-            ->from('message_api_token'); // optional if set in config
+            ->from('message_api_token') // optional if set in config
+            ->content('Test message');
     }
 }
 ```
 
-### Available methods
+#### Available methods
+
+`create()`: Initial a message instance.
+
+`from()`: Optional. Sets the sender's access token. Default to the set in config.
+
+`to()`: Required. Specifies the line user id to send the notification to.
+
+`content()`: Required. Sets a content of the notification message. Only support plain text for now.
+
+### Template Messages
+
+Reference: [Template messages](https://developers.line.biz/en/reference/messaging-api/#template-messages)
+
+Currently, only 'buttons' and 'confirm' template types are supported. We will update to support 'carousel' and 'image carousel' as soon as possible.
+
+```php
+use Illuminate\Notifications\Notification;
+use LeoChien\LaravelNotificationChannelLine\LineTemplateMessage;
+use LeoChien\LaravelNotificationChannelLine\LineWebhookChannel;
+
+class TaskCompleted extends Notification
+{
+    public function via($notifiable): array
+    {
+        return [
+            'line',
+        ];
+    }
+
+    public function toLine($notifiable): LineMessage
+    {
+        return LineTemplateMessage::create()
+            ->to('line_user_id')
+            ->from('message_api_token') // optional if set in config
+            ->type('buttons')
+            ->thumbnailImageUrl('https://fakeimg.pl/350x200')
+            ->text("This is the text of the message")
+            ->actions([
+                [
+                    'type' => 'uri',
+                    'label' => 'See more',
+                    'uri' => 'https://example.com',
+                ],
+            ]);
+    }
+}
+```
+
+#### Available methods
 
 `from()`: Sets the sender's access token.
 
 `to()`: Specifies the line user id to send the notification to.
 
-`content()`: Sets a content of the notification message. Only support plain text for now.
+`type()`: Required. template type, allowed value: buttons, confirm, carousel, image_carousel.
+
+`thumbnailImageUrl()`: Optional. Image URL (Max character limit: 2000). Protocol: HTTPS (TLS 1.2 or later). Image format: JPEG or PNG. Max width: 1024px. Max file size: 10 MB.
+
+`imageAspectRatio()`: Optional. Aspect ratio of the image. Allowed values: rectangle(1.51:1), square(1:1). Default: rectangle.
+
+`imageSize()`: Optional. Size of the image. Allowed Values: cover, contain. Default: cover.
+
+`imageBackgroundColor()`: Optional. Background color of the image. Specify a RGB color value. Default: #FFFFFF (white)
+
+`title()`: Optional. Message Title, max character limit: 40.
+
+`text()`: Required. Message text, max character limit: 160 (no image or title), max character limit: 60 (message with an image or title).
+
+`defaultAction()`: Optional. Action when image, title or text area is tapped.
+
+`actions()`: Required. Action when tapped, max objects: 4.
 
 ## Security
 
